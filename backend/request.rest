@@ -1,0 +1,165 @@
+// Create a user
+POST http://localhost:5000/user
+Content-Type:  application/json
+
+{
+    "name": "Amru",
+    "email": "amru@gmail.com",
+    "password":"1234",
+    "confPassword": "1234",
+    "role": "user"
+}
+
+###
+// Get all user
+GET http://localhost:5000/user
+
+###
+// Get single user
+GET http://localhost:5000/user/9d9c3372-d0a1-4bcd-9095-994c7431df48
+
+###
+//Update user
+PATCH http://localhost:5000/user/9d9c3372-d0a1-4bcd-9095-994c7431df48
+Content-Type:  application/json
+
+{
+    "name": "Hajran Tama",
+    "email": "hajran@gmail.com",
+    "password":"",
+    "confPassword": "",
+    "role": "user"
+}
+
+###
+//Delete user
+DELETE http://localhost:5000/user/9d9c3372-d0a1-4bcd-9095-994c7431df48
+
+###
+// Login Admin
+POST http://localhost:5000/login
+Content-Type:  application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "1234"
+}
+
+###
+// Login User
+POST http://localhost:5000/login
+Content-Type:  application/json
+
+{
+    "email": "hajran@gmail.com",
+    "password": "1234"
+}
+
+###
+// Info User
+GET http://localhost:5000/me
+
+###
+// Logout User
+DELETE http://localhost:5000/logout
+
+###
+// Get all Quiz
+GET http://localhost:5000/quiz
+
+###
+// Get single Quiz
+GET http://localhost:5000/quiz/77d695db-d1ab-4c61-87a5-375369d85e10
+
+
+###
+// POST DATA QUIZ
+POST http://localhost:5000/quiz
+Content-Type:  application/json
+
+{
+    "name": "Statistika",
+    "link": "https://chat.openai.com/c/ce42750e-165b-41d6-99e3-22fe2f796f67",
+    "kode": "AMRU2024"
+}
+
+###
+//Update Quiz
+PATCH http://localhost:5000/quiz/17598685-0694-4d24-babf-7790ad43b5ff
+Content-Type:  application/json
+
+{
+    "name": "Barisan Dan Deret",
+    "link": "https://chat.openai.com/c/ce42750e-165b-41d6-99e3-22fe2f796f67",
+    "kode": "BDWT75"
+}
+
+###
+//Hapus Quiz
+DELETE http://localhost:5000/quiz/17598685-0694-4d24-babf-7790ad43b5ff
+
+###
+// Get all Hasil by Id Quiz
+GET http://localhost:5000/hasil?quizId=2
+
+###
+// Get single Hasil
+GET http://localhost:5000/hasil/ee3a4c17-b4fc-4af9-86c8-cf3b4bb6d1c8
+
+###
+// Create a new Hasil
+POST http://localhost:5000/hasil
+Content-Type: application/json
+
+{
+    "nama_siswa": "Asma Choirunisa",
+    "kelas": "X MIPA 1",
+    "jenis_kelamin": "Perempuan",
+    "pertanyaan_1": "Benar",
+    "pertanyaan_2": "Benar",
+    "pertanyaan_3": "Benar",
+    "pertanyaan_4": "Benar",
+    "pertanyaan_5": "Benar",
+    "pertanyaan_6": "Benar",
+    "pertanyaan_7": "Benar",
+    "pertanyaan_8": "Salah",
+    "pertanyaan_9": "Benar",
+    "pertanyaan_10": "Salah",
+    "jumlah_benar": 8,
+    "jumlah_salah": 2,
+    "nilai_akhir": 80,
+    "nama_quiz": "Aljabar"
+}
+
+###
+// Update a Hasil
+PATCH http://localhost:5000/hasil/9d9c3372-d0a1-4bcd-9095-994c7431df48
+Content-Type: application/json
+
+{
+    "nama_siswa": "Nama Siswa Baru",
+    "kelas": "Kelas Baru",
+    "jenis_kelamin": "Perempuan",
+    "pertanyaan_1": "Jawaban Pertanyaan 1 Baru",
+    "pertanyaan_2": "Jawaban Pertanyaan 2 Baru",
+    "pertanyaan_3": "Jawaban Pertanyaan 3 Baru",
+    "pertanyaan_4": "Jawaban Pertanyaan 4 Baru",
+    "pertanyaan_5": "Jawaban Pertanyaan 5 Baru",
+    "pertanyaan_6": "Jawaban Pertanyaan 6 Baru",
+    "pertanyaan_7": "Jawaban Pertanyaan 7 Baru",
+    "pertanyaan_8": "Jawaban Pertanyaan 8 Baru",
+    "pertanyaan_9": "Jawaban Pertanyaan 9 Baru",
+    "pertanyaan_10": "Jawaban Pertanyaan 10 Baru",
+    "jumlah_benar": 9,
+    "jumlah_salah": 1,
+    "nilai_akhir": 90,
+    "quizId": "17598685-0694-4d24-babf-7790ad43b5ff"
+}
+
+###
+// Delete a Hasil
+DELETE http://localhost:5000/hasil/9d9c3372-d0a1-4bcd-9095-994c7431df48
+
+###
+// analisis hasil quiz
+GET http://localhost:5000/hasil/analysis/2
